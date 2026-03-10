@@ -51,18 +51,24 @@ const Browse = ({ onNavigate }: BrowseProps) => {
             <p>Loading catalog...</p>
           </section>
         ) : hasSearch ? (
-          <section className="search-grid">
-            {searchResults.map((movie) => (
-              <button
-                key={movie.id}
-                className="search-grid__item"
-                style={{ backgroundImage: movie.image, borderColor: movie.accent }}
-                onClick={() => setActiveMovie(movie)}
-              >
-                <span>{movie.title}</span>
-              </button>
-            ))}
-          </section>
+          searchResults.length > 0 ? (
+            <section className="search-grid">
+              {searchResults.map((movie) => (
+                <button
+                  key={movie.id}
+                  className="search-grid__item"
+                  style={{ backgroundImage: movie.image, borderColor: movie.accent }}
+                  onClick={() => setActiveMovie(movie)}
+                >
+                  <span>{movie.title}</span>
+                </button>
+              ))}
+            </section>
+          ) : (
+            <section className="loading-panel">
+              <p>No titles matched your search. Try a genre like "Sci-Fi" or "Drama".</p>
+            </section>
+          )
         ) : (
           rows.map((row) => (
             <Row key={row.id} row={row} onSelect={(movie) => setActiveMovie(movie)} />

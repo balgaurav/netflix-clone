@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AuthProvider } from "./context/AuthContext";
 import { useAuth } from "./hooks/useAuth";
 import Browse from "./pages/Browse";
@@ -10,6 +10,15 @@ import type { AppView } from "./types";
 const AppShell = () => {
   const { user } = useAuth();
   const [view, setView] = useState<AppView>(user ? "browse" : "home");
+
+  useEffect(() => {
+    if (user) {
+      setView("browse");
+      return;
+    }
+
+    setView((currentView) => (currentView === "browse" ? "home" : currentView));
+  }, [user]);
 
   const goTo = (nextView: AppView) => {
     setView(nextView);
