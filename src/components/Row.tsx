@@ -16,8 +16,8 @@ const Row = ({ row, onSelect }: RowProps) => {
         </div>
       </div>
       <div className="content-row__track">
-        {row.movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} onSelect={onSelect} />
+        {row.movies.map((movie, index) => (
+          <MovieCard key={movie.id} movie={movie} onSelect={onSelect} index={index} />
         ))}
       </div>
     </section>

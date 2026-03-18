@@ -53,11 +53,15 @@ const Browse = ({ onNavigate }: BrowseProps) => {
         ) : hasSearch ? (
           searchResults.length > 0 ? (
             <section className="search-grid">
-              {searchResults.map((movie) => (
+              {searchResults.map((movie, index) => (
                 <button
                   key={movie.id}
                   className="search-grid__item"
-                  style={{ backgroundImage: movie.image, borderColor: movie.accent }}
+                  style={{
+                    backgroundImage: movie.image,
+                    borderColor: movie.accent,
+                    animationDelay: `${index * 60}ms`,
+                  }}
                   onClick={() => setActiveMovie(movie)}
                 >
                   <span>{movie.title}</span>

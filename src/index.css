@@ -127,6 +127,17 @@ a {
   background: rgba(255, 255, 255, 0.07);
   color: var(--text);
   outline: none;
+  transition:
+    border-color 250ms ease,
+    background 250ms ease,
+    transform 250ms ease;
+}
+
+.navbar__search:focus,
+.auth-panel input:focus {
+  border-color: rgba(229, 9, 20, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
 }
 
 .profile-badge,
@@ -354,6 +365,7 @@ a {
   min-height: 72vh;
   padding: 3rem;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.22) 62%, rgba(0, 0, 0, 0.82));
+  animation: fade-in 800ms ease both;
 }
 
 .banner__title {
@@ -426,6 +438,7 @@ a {
     box-shadow 280ms ease,
     border-color 280ms ease;
   will-change: transform;
+  animation: fade-in-scale 500ms ease both;
 }
 
 .movie-card::before,
@@ -488,6 +501,8 @@ a {
   min-height: 220px;
   background-color: transparent;
   color: var(--text);
+  animation: fade-in-scale 400ms ease both;
+  animation-delay: calc(var(--item-index, 0) * 60ms);
 }
 
 .search-grid__item span {
@@ -514,12 +529,15 @@ a {
   display: grid;
   place-items: center;
   padding: 2rem;
+  animation: fade-in 300ms ease both;
 }
 
 .video-modal__backdrop {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  animation: fade-in 300ms ease both;
 }
 
 .video-modal__panel {
@@ -528,6 +546,7 @@ a {
   width: min(860px, 100%);
   overflow: hidden;
   background: var(--panel-strong);
+  animation: modal-pop-in 400ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
 .video-modal__close {
@@ -603,6 +622,40 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
   }
 }
 
