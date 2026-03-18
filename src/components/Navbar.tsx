@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useAuth } from "../hooks/useAuth";
 import type { AppView } from "../types";
 
@@ -15,13 +16,25 @@ const Navbar = ({
   compact = false
 }: NavbarProps) => {
   const { user, logout } = useAuth();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleBrowse = () => {
     onNavigate(user ? "browse" : "signup");
   };
 
   return (
-    <header className={`navbar ${compact ? "navbar--compact" : ""}`}>
+    <header
+      className={`navbar ${compact ? "navbar--compact" : ""} ${scrolled ? "navbar--scrolled" : ""}`}
+    >
       <button className="brand" onClick={() => onNavigate("home")}>
         NETFLIX
       </button>

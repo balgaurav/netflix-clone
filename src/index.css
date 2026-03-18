@@ -105,6 +105,11 @@ a {
   transition: background 300ms ease;
 }
 
+.navbar--scrolled {
+  background: rgba(6, 6, 6, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
 .navbar--compact {
   position: relative;
 }
@@ -355,6 +360,14 @@ a {
 
 .feature-grid article {
   padding: 1.4rem;
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease;
+}
+
+.feature-grid article:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .auth-layout {
@@ -791,5 +804,16 @@ a {
 
   .video-modal {
     padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
