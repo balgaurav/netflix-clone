@@ -11,7 +11,7 @@ const MovieCard = ({ movie, onSelect, index = 0 }: MovieCardProps) => {
     <article
       className="movie-card"
       style={{
-        backgroundImage: movie.image,
+        backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%), url(${movie.image})`,
         borderColor: movie.accent,
         animationDelay: `${index * 80}ms`,
       }}

@@ -30,7 +30,7 @@ const movies: Movie[] = [
     cast: ["Nia Sol", "Theo March", "Mina Vale"],
     accent: "#6e7dff",
     image:
-      "linear-gradient(135deg, rgba(3,7,18,0.8), rgba(110,125,255,0.35)), radial-gradient(circle at top, #4f46e5 0%, #0b1120 65%)",
+      "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&h=1200&fit=crop",
     logo: "ATLAS 9",
     preview: "Signal found. Orbit compromised. Trust no one below.",
     match: 98,
@@ -48,7 +48,7 @@ const movies: Movie[] = [
     cast: ["Jules Hart", "Parker Sun", "Lena Cruz"],
     accent: "#ff7b54",
     image:
-      "linear-gradient(135deg, rgba(31,12,3,0.8), rgba(255,123,84,0.35)), radial-gradient(circle at top, #f97316 0%, #1c0f0a 72%)",
+      "https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=800&h=1200&fit=crop",
     logo: "VELVET HEIST",
     preview: "One last score. Zero clean exits.",
     match: 95
@@ -65,7 +65,7 @@ const movies: Movie[] = [
     cast: ["Rina Lo", "Carter Pryce", "Mads Venn"],
     accent: "#66d9e8",
     image:
-      "linear-gradient(135deg, rgba(5,20,32,0.82), rgba(102,217,232,0.32)), radial-gradient(circle at top, #0891b2 0%, #071924 72%)",
+      "https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=800&h=1200&fit=crop",
     logo: "NORTHWIND FILES",
     preview: "What thawed should have stayed buried.",
     match: 97
@@ -82,7 +82,7 @@ const movies: Movie[] = [
     cast: ["Iris Quinn", "Dante Cole", "Mara Reeve"],
     accent: "#ef4444",
     image:
-      "linear-gradient(135deg, rgba(32,5,5,0.82), rgba(239,68,68,0.32)), radial-gradient(circle at top, #b91c1c 0%, #150606 72%)",
+      "https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=800&h=1200&fit=crop",
     logo: "MIDNIGHT DISTRICT",
     preview: "Every debt is due by sunrise.",
     match: 94
@@ -99,7 +99,7 @@ const movies: Movie[] = [
     cast: ["Milo Reed", "June Rhee", "Amara Fox"],
     accent: "#facc15",
     image:
-      "linear-gradient(135deg, rgba(37,24,3,0.82), rgba(250,204,21,0.32)), radial-gradient(circle at top, #eab308 0%, #181102 72%)",
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&h=1200&fit=crop",
     logo: "PAPER MOONS",
     preview: "Imagination has escape velocity.",
     match: 92
@@ -116,7 +116,7 @@ const movies: Movie[] = [
     cast: ["Sara Voss", "Elian Frost", "Noah Flint"],
     accent: "#22c55e",
     image:
-      "linear-gradient(135deg, rgba(4,22,9,0.82), rgba(34,197,94,0.32)), radial-gradient(circle at top, #16a34a 0%, #061308 72%)",
+      "https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=800&h=1200&fit=crop",
     logo: "LAST SIGNAL",
     preview: "When everything goes dark, listen harder.",
     match: 93
