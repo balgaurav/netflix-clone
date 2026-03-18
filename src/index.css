@@ -37,6 +37,8 @@ body {
   background:
     radial-gradient(circle at top, rgba(229, 9, 20, 0.18), transparent 30%),
     linear-gradient(180deg, #170304 0%, #060606 26%, #090909 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body,
@@ -52,6 +54,7 @@ input {
 
 button {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -98,6 +101,8 @@ a {
   gap: 1.5rem;
   padding: 1.4rem 4vw;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent);
+  backdrop-filter: blur(12px) saturate(180%);
+  transition: background 300ms ease;
 }
 
 .navbar--compact {
@@ -110,6 +115,14 @@ a {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: clamp(1.6rem, 2vw, 2.2rem);
   letter-spacing: 0.08em;
+  transition:
+    transform 200ms ease,
+    opacity 200ms ease;
+}
+
+.brand:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 .navbar__actions {
@@ -153,6 +166,14 @@ a {
   color: var(--text);
   font-size: 0.9rem;
   font-weight: 700;
+  transition:
+    background 200ms ease,
+    transform 200ms ease;
+}
+
+.profile-badge:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(1.05);
 }
 
 .pill--muted {
@@ -183,6 +204,10 @@ a {
   color: white;
 }
 
+.solid-button:hover {
+  background: #c9070e;
+}
+
 .solid-button:hover,
 .ghost-button:hover,
 .light-button:hover {
@@ -208,9 +233,18 @@ a {
   border: 1px solid var(--line);
 }
 
+.ghost-button:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
 .light-button {
   background: white;
   color: black;
+}
+
+.light-button:hover {
+  background: #f0f0f0;
 }
 
 .text-link {
@@ -218,6 +252,11 @@ a {
   background: none;
   color: var(--muted);
   text-align: left;
+  transition: color 200ms ease;
+}
+
+.text-link:hover {
+  color: var(--text);
 }
 
 .marketing,
@@ -403,6 +442,7 @@ a {
   margin-top: 2rem;
   animation: fade-in-up 600ms ease both;
   will-change: transform, opacity;
+  contain: layout style paint;
 }
 
 .content-row__header h2,
@@ -419,6 +459,7 @@ a {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
+  contain: layout style;
 }
 
 .movie-card,
@@ -437,8 +478,13 @@ a {
     transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1),
     box-shadow 280ms ease,
     border-color 280ms ease;
-  will-change: transform;
   animation: fade-in-scale 500ms ease both;
+  contain: layout style paint;
+}
+
+.movie-card:hover,
+.search-grid__item:hover {
+  will-change: transform;
 }
 
 .movie-card::before,
@@ -487,6 +533,7 @@ a {
   border-radius: 50%;
   background: radial-gradient(circle, var(--accent-soft), transparent 68%);
   animation: pulse 1.6s infinite;
+  box-shadow: 0 0 40px rgba(229, 9, 20, 0.4);
 }
 
 .search-grid {
@@ -558,6 +605,19 @@ a {
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.5);
   color: white;
+  transition:
+    background 200ms ease,
+    transform 200ms ease;
+  backdrop-filter: blur(8px);
+}
+
+.video-modal__close:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.video-modal__close:active {
+  transform: scale(0.95);
 }
 
 .video-modal__hero {
