@@ -19,7 +19,7 @@ const VideoModal = ({ movie, onClose }: VideoModalProps) => {
         </button>
         <div
           className="video-modal__hero"
-          style={{ backgroundImage: movie.image, borderColor: movie.accent }}
+          style={{ backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.3) 100%), url(${movie.image})`, borderColor: movie.accent }}
         >
           <div className="video-modal__hero-copy">
             <p className="banner__label">Featured title</p>

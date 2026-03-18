@@ -15,7 +15,7 @@ const Banner = ({ movie, onPlay, onMoreInfo }: BannerProps) => {
     <section
       className="banner"
       style={{
-        backgroundImage: movie.image
+        backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.2) 100%), url(${movie.image})`
       }}
     >
       <div className="banner__overlay">

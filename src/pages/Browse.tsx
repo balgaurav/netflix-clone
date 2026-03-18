@@ -58,7 +58,7 @@ const Browse = ({ onNavigate }: BrowseProps) => {
                   key={movie.id}
                   className="search-grid__item"
                   style={{
-                    backgroundImage: movie.image,
+                    backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%), url(${movie.image})`,
                     borderColor: movie.accent,
                     animationDelay: `${index * 60}ms`,
                   }}
