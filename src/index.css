@@ -21,6 +21,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #root {
@@ -171,7 +175,14 @@ a {
 .solid-button:hover,
 .ghost-button:hover,
 .light-button:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.solid-button:active,
+.ghost-button:active,
+.light-button:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .solid-button--large,
@@ -333,6 +344,7 @@ a {
   background-size: cover;
   background-position: center;
   box-shadow: var(--shadow);
+  animation: fade-in-up 700ms ease both;
 }
 
 .banner__overlay {
@@ -372,10 +384,13 @@ a {
   align-items: end;
   margin: 1.5rem 0;
   padding: 1.25rem 1.4rem;
+  animation: fade-in-up 500ms ease both;
 }
 
 .content-row {
   margin-top: 2rem;
+  animation: fade-in-up 600ms ease both;
+  will-change: transform, opacity;
 }
 
 .content-row__header h2,
@@ -406,7 +421,11 @@ a {
   overflow: hidden;
   text-align: left;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  transition:
+    transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 280ms ease,
+    border-color 280ms ease;
+  will-change: transform;
 }
 
 .movie-card::before,
@@ -429,6 +448,11 @@ a {
   flex-direction: column;
   justify-content: flex-end;
   min-height: 100%;
+  transition: transform 280ms ease;
+}
+
+.movie-card:hover .movie-card__content {
+  transform: translateY(-4px);
 }
 
 .movie-card__match {
@@ -475,8 +499,12 @@ a {
 
 .movie-card:hover,
 .search-grid__item:hover {
-  transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    0 0 0 2px rgba(255, 255, 255, 0.1),
+    0 0 40px rgba(229, 9, 20, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .video-modal {
@@ -558,6 +586,18 @@ a {
   from {
     opacity: 0;
     transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
 
   to {
