@@ -19,4 +19,3 @@ npm run build
 
 - All catalog data is mocked locally in [`src/data/catalog.ts`](/Users/gauravbal/netflix-clone/src/data/catalog.ts).
 - Auth is intentionally local-only for demo purposes.
-- The repository history was created incrementally and currently contains 17 commits.
